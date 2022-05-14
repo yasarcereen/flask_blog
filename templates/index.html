@@ -1,0 +1,39 @@
+{% extends "partials/main.html" %}
+{% block content %}
+<!-- Page Header-->
+        <header class="masthead" style="background-image: url('static/home-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Clean Blog Theme</h1>
+                            <span class="subheading">Blog Project Using Flask</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <div class="container px-4 px-lg-5">
+            {% for blogpost in blogposts %}
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <!-- Post preview-->
+                    <div class="post-preview">
+                        <a href="/post/{{ blogpost.id }}">
+                            <h2 class="post-title">{{ blogpost.title }}</h2>
+                            <h3 class="post-subtitle">{{ blogpost.subtitle }}</h3>
+                        </a>
+                        <p class="post-meta">
+                            Posted by
+                            <a href="#!">{{ blogpost.author }}</a>
+                            on {{ blogpost.date_created.strftime('%Y-%m-%d') }}
+                        </p>
+                    </div>
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                </div>
+            </div>
+            {% endfor %}
+        </div>    
+{% endblock content%}        
