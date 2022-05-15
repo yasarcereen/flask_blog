@@ -3,7 +3,7 @@ from marshmallow import Schema, ValidationError, fields
 from flask import Flask, render_template, url_for, request, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 
-app = Flask(__name__, template_folder='templates', static_url_path='/static/', static_folder='/static/')
+app = Flask(__name__, template_folder='templates', static_url_path='/static/', static_folder='static')
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://cerenyasar:2321@localhost/blog'
 db = SQLAlchemy(app)
@@ -66,9 +66,9 @@ def post(id):
     blogpost= Blogpost.query.get_or_404(id)
     return render_template('post.html', blogpost=blogpost) 
 
-@app.route("/static/<path:path>")
-def static_dir(path):
-    return send_from_directory("static", path)
+# @app.route("/static/<path:path>")
+# def static_dir(path):
+#     return send_from_directory("static", path)
 
 if __name__ == "__main__":
     app.run(debug=True)
