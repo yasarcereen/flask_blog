@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__, template_folder='templates', static_url_path='/static/', static_folder='static')
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://cerenyasar:2321@localhost/blog'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://username:password@localhost/blog'
 db = SQLAlchemy(app)
 
 class Blogpost(db.Model):
