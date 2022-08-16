@@ -1,3 +1,4 @@
-# flask_blog_project
+# flask_blog
 
-This is a blog website created by using flask. I found the front-end template on the Internet. There are a few bugs which i hope to fix in a few weeks.
+This is a blog created by using flask. Link to the clean blog theme:
+https://github.com/startbootstrap/startbootstrap-clean-blog
